@@ -74,6 +74,7 @@ abstract class ViewState<Page extends View, Con extends Controller>
     return ChangeNotifierProvider<Con>.value(
         value: _controller,
         child: Consumer<Con>(builder: (ctx, con, _) {
+          print('TUNT ChangeNotifierProvider child');
           _controller = con;
           return buildPage();
         }));
